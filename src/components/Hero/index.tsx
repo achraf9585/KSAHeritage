@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Parse from "parse/dist/parse.min.js";
+//import Parse from "parse/dist/parse.min.js";
 
 import ButtonLink from "components/ButtonLink";
 import Carousel from "components/Hero/Carousel";
@@ -78,7 +78,7 @@ const Hero = ({ sites }: { sites: TSitesProps }) => {
   };
 
   */
-
+  /*
   const readNavigations = async function (): Promise<boolean> {
     // Reading parse objects is done by using Parse.Query
     const parseQuery: Parse.Query = new Parse.Query("Navigation");
@@ -96,11 +96,11 @@ const Hero = ({ sites }: { sites: TSitesProps }) => {
       return false;
     }
   };
-
+*/
   useEffect(() => {
-    console.log("this is new console");
+    // console.log("this is new console");
     //doUserLogIn();
-    readNavigations();
+    // readNavigations();
   }, []);
 
   useEffect(() => {
