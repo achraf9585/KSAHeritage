@@ -198,8 +198,6 @@ const Dome: React.FC<DomeProps> = ({
         names={names}
         url={url}
         links={links}
-        imagesUrl={names}
-        test={names}
         id={id}
         onClick={handleNavigationButtonClick}
       />

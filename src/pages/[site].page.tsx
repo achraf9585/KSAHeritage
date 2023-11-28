@@ -6,7 +6,11 @@ import { getSiteData, getSites } from "api";
 import { ParsedUrlQuery } from "querystring";
 import * as THREE from "three";
 
-import { GetStaticPaths, GetStaticProps } from "next";
+import {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+} from "next";
 import { useRouter } from "next/router";
 
 import SEO from "components/SEO";
@@ -61,10 +65,10 @@ export const getStaticPaths: GetStaticPaths<ParsedUrlQuery> = async ({
 
 let isFirstPhoto = true;
 
-export const getStaticProps: GetStaticProps<IProps> = async ({
-  params,
-  locale,
-}) => {
+export const getStaticProps = async (
+  context: GetStaticPropsContext
+): Promise<GetStaticPropsResult<IProps>> => {
+  const { params, locale } = context;
   const siteId = params !== undefined ? (params.site as string) : "";
   const siteData = await getSiteData(siteId, locale);
 

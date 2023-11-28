@@ -8,8 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 interface NavigationButtonProps {
   positions: number[][];
   names: string[];
-  test: string[];
-  imagesUrl: string[];
+
   url: string;
   id: number;
 
@@ -20,8 +19,7 @@ interface NavigationButtonProps {
 const NavigationButtons: React.FC<NavigationButtonProps> = ({
   positions,
   names,
-  imagesUrl,
-  test,
+
   id,
   url,
 
@@ -43,8 +41,7 @@ const NavigationButtons: React.FC<NavigationButtonProps> = ({
       setShowHtml(true);
     }, 3500);
     console.log("this is a message for names : " + names);
-    console.log("this is a message for images : " + imagesUrl);
-    console.log("test: " + test);
+    //console.log("this is a message for images : " + imagesUrl);
 
     return () => clearTimeout(timeoutId);
   }, []);

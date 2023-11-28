@@ -14,8 +14,7 @@ export type TSiteDataProps = {
     id: number;
     name: string;
     names: string[];
-    test: string[];
-    imagesUrl: string[];
+
     modals: {
       title: string;
       text: string;
