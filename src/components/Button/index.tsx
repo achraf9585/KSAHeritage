@@ -24,13 +24,13 @@ const Button = ({
       disabled={disabled}
       onClick={onClick}
       className={clsx("rounded-md flex px-8 py-4  items-center", {
-        "bg-primary hover:bg-secondary text-white hover:text-primary": variation === "primary",
-        "bg-secondary hover:bg-primary text-primary hover:text-white": variation === "secondary",
+        "bg-primary hover:bg-secondary text-white hover:text-primary":
+          variation === "primary",
+        "bg-secondary hover:bg-primary text-primary hover:text-white":
+          variation === "secondary",
       })}
     >
-      <span
-        className={clsx("uppercase font-semibold text-base 4xl:text-2xl")}
-      >
+      <span className={clsx("uppercase font-semibold text-base 4xl:text-2xl")}>
         {text}
       </span>
       {/* <svg

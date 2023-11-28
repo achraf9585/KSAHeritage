@@ -21,12 +21,6 @@ const HeritageSites = ({ sites }: { sites: TSitesProps }) => {
     <Layout>
       <div className="relative pb-16 pt-24 md:py-20 2xl:py-32 px-8 md:px-36 md:text-center grid justify-items-center z-0">
         <div className="md:pb-20 pb-14">
-          <PatternTile
-            numberOfTiles={5}
-            stroke="#1EA84C"
-            className="pb-3"
-            singleTileWidth={27}
-          />
           <h2 className="font-secondary text-3xl md:text-5xl font-normal pb-2">
             {t("heritage.title")}
           </h2>

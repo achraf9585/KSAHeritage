@@ -21,14 +21,17 @@ const ButtonLink = ({
 
   return (
     <button
+      style={{ backgroundColor: "#0d799e" }}
       className={clsx(
         "rounded-md ",
         href === "#"
           ? "pointer-events-none cursor-not-allowed"
           : "cursor-pointer",
         {
-          "bg-primary hover:bg-white text-white hover:text-primary": variation === "primary",
-          "bg-secondary hover:bg-primary text-primary hover:text-white": variation === "secondary",
+          "bg-primary hover:bg-white text-white hover:text-primary":
+            variation === "primary",
+          "bg-secondary hover:bg-primary text-primary hover:text-white":
+            variation === "secondary",
         }
       )}
     >
@@ -42,9 +45,7 @@ const ButtonLink = ({
           "flex px-4 py-2 lg:px-8 lg:py-4  items-center"
         )}
       >
-        <span
-          className={clsx("uppercase font-semibold text-xs lg:text-base")}
-        >
+        <span className={clsx("uppercase font-semibold text-xs lg:text-base")}>
           {href === "#" ? t("comingsoon") : text}
         </span>
         {/* <svg
