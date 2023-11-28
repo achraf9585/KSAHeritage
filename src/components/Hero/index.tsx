@@ -19,8 +19,8 @@ const Hero = ({ sites }: { sites: TSitesProps }) => {
 
   const PARSE_HOST_URL = "https://parseapi.back4app.com/";
   const PARSE_JAVASCRIPT_KEY = "yHoqdGGLMdJuviGUQTJC5uPsqOKj6YCClf2PSF5z";
-  Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
-  Parse.serverURL = PARSE_HOST_URL;
+  // Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+  // Parse.serverURL = PARSE_HOST_URL;
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [t] = useTranslation();
