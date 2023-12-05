@@ -1,6 +1,8 @@
 import { getSites } from "api";
+import { useEffect } from "react";
 
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 
 import About from "components/About";
 import DownloadApps from "components/DownloadApps";
@@ -44,6 +46,20 @@ export const getStaticProps: GetStaticProps<IProps> = async (ctx) => {
 };
 
 const Home: React.FC<IProps> = ({ sites, language }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check if the page was refreshed
+    const isPageRefreshed = window.performance.navigation.type === 1;
+
+    // Your logic to check conditions and redirect
+    const shouldRedirect = isPageRefreshed; // Replace this with your actual condition
+
+    if (shouldRedirect) {
+      router.push("/"); // Replace with your actual destination
+    }
+  }, []);
+
   return (
     <>
       <SEO

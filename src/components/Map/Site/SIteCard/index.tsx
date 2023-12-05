@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Image from "next/image";
@@ -28,11 +28,39 @@ const SiteCard: React.FC<IProps> = ({
 }) => {
   const { locale } = useRouter();
   const [isVidePlaying, setIsVideoPlaying] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [t] = useTranslation();
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const router = useRouter();
+  const [isWaitTextVisible, setIsWaitTextVisible] = useState(false);
+
+  useEffect(() => {
+    // Use the 'loadedmetadata' event to detect when the video metadata is loaded
+    const handleLoadedMetadata = () => {
+      setIsLoading(false);
+    };
+
+    const videoElement = videoRef.current;
+
+    if (videoElement) {
+      videoElement.addEventListener("loadedmetadata", handleLoadedMetadata);
+    }
+
+    // Cleanup event listener on unmount
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener(
+          "loadedmetadata",
+          handleLoadedMetadata
+        );
+      }
+    };
+  }, []);
   const handleSiteSelect = () => {
-    setIsVideoPlaying(true);
+    setIsLoading(true);
+    setIsWaitTextVisible(true); // Show "Wait, please" text
+
+    // setIsVideoPlaying(true);
     videoRef.current?.play();
   };
   const handleVideoEnded = () => {
@@ -101,8 +129,14 @@ const SiteCard: React.FC<IProps> = ({
 
         <Button
           onClick={handleSiteSelect}
-          disabled={link === "#"}
-          text={link === "#" ? t("comingsoon") : t("Visit3D")}
+          disabled={link === "#" || isWaitTextVisible}
+          text={
+            isWaitTextVisible
+              ? "Loading ..."
+              : link === "#"
+              ? t("comingsoon")
+              : t("Visit3D")
+          }
           variation="secondary"
         />
       </div>

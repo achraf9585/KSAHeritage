@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import clsx from "helpers";
@@ -15,6 +15,7 @@ const Button = ({
   disabled: boolean;
 }) => {
   const [, { language }] = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
 
   const selectedLanguage =
     language === "ar" || language === "en" ? language : "en";
@@ -22,6 +23,7 @@ const Button = ({
   return (
     <button
       disabled={disabled}
+      style={{ cursor: isLoading ? "wait" : "pointer" }}
       onClick={onClick}
       className={clsx("rounded-md flex px-8 py-4  items-center", {
         "bg-primary hover:bg-secondary text-white hover:text-primary":
