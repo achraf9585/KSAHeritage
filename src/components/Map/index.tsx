@@ -89,14 +89,16 @@ const Map = ({ sites }: { sites: TSitesProps }) => {
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            //objectFit: "cover",
           }}
         />
       </div>
       <Image
         style={{
-          objectFit: "cover",
+          objectFit: "fill",
           width: "100%", // This makes the image responsive and take up 100% width
+          top: "40px",
+          left: "-40px",
         }}
         fill
         ref={imageRef}

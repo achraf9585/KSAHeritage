@@ -156,7 +156,7 @@
     "cardImage": "/images/sites/zaabal_l.png",
     "videoLink": "https://d2vm0afvtrg4mc.cloudfront.net/intro-videos/zaabal-castle.mp4",
     "geolaction": {
-      "latitude": 28.2,
+      "latitude": 24.2,
       "longitude": 37.40194753921596
     },
     "link": "/zaabal-castle"
@@ -183,7 +183,7 @@
     "cardImage": "/images/sites/jandal.png",
     "videoLink": "https://d2vm0afvtrg4mc.cloudfront.net/intro-videos/Jandal.mp4",
     "geolaction": {
-      "latitude": 27.611759192959506,
+      "latitude": 26.611759192959506,
       "longitude": 38.66720886769519
     },
     "link": "/dumat-al-jandal"
@@ -210,7 +210,7 @@
     "cardImage": "/images/sites/sour.png",
     "videoLink": "https://d2vm0afvtrg4mc.cloudfront.net/intro-videos/Sour.mp4",
     "geolaction": {
-      "latitude": 23.179556765505448,
+      "latitude": 25.179556765505448,
       "longitude": 31.1
     },
     "link": "/sour-city"
