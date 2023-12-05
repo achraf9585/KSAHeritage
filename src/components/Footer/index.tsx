@@ -27,6 +27,7 @@ const Footer = () => {
           <ul
             dir={selectedLanguage === "ar" ? "rtl" : "ltr"}
             className="grid gap-9 footer-links"
+            style={{ marginTop: "85px" }}
           >
             <li>
               <a href="#">{t("nav.home")}</a>
